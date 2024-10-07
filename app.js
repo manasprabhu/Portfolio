@@ -5,22 +5,19 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Email configurations
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'your-email@gmail.com', // Your Gmail
-        pass: 'your-email-password',  // App password (if 2FA is on)
+        user: 'your-email@gmail.com',
+        pass: 'your-app-password',
     },
 });
 
-// Handle form submission
 app.post('/send-email', (req, res) => {
     const { name, email, subject, details } = req.body;
-    
     const mailOptions = {
         from: email,
-        to: 'your-email@gmail.com',  // Your Gmail to receive notifications
+        to: 'your-email@gmail.com',
         subject: `New Contact: ${subject}`,
         text: `Name: ${name}\nEmail: ${email}\nDetails: ${details}`,
     };
