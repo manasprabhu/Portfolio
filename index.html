@@ -147,24 +147,38 @@
             </div>
         </div>
     </section>
-    <!-- contact section -->
-    <section id="contact">
-        <div class="container mt-3 contactContent">
-            <h1 class="text-center">Contact Me</h1>
-            <div class="col-lg-6 mx-auto">
-                <!-- form fields -->
-                <form>
-                    <input type="text" class="form-control form-control-lg" placeholder="Name">
-                    <input type="email" class="form-control mt-3" placeholder="Email">
-                    <input type="text" class="form-control mt-3" placeholder="Subject">
-                    <div class="mb-3 mt-3">
-                        <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Project Details"></textarea>
-                    </div>
-                </form>
-                <button type="button" class="btn btn-success mt-3" style="background-color: #0d6efd;">Contact Me</button>
-            </div>
+<!-- contact section -->
+<section id="contact">
+    <div class="container mt-3 contactContent">
+        <h1 class="text-center">Contact Me</h1>
+        <div class="col-lg-6 mx-auto">
+            <!-- form fields -->
+            <form onsubmit="sendEmail(); return false;">
+                <input type="text" id="name" class="form-control form-control-lg" placeholder="Name" required>
+                <input type="email" id="email" class="form-control mt-3" placeholder="Email" required>
+                <input type="text" id="subject" class="form-control mt-3" placeholder="Subject" required>
+                <div class="mb-3 mt-3">
+                    <textarea class="form-control" rows="5" id="details" placeholder="Project Details" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success mt-3" style="background-color: #0d6efd;">Contact Me</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    function sendEmail() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const details = document.getElementById('details').value;
+
+        const mailtoLink = `mailto:manasprabhu52@gmail.com?subject=${encodeURIComponent(subject)}&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ADetails: ${encodeURIComponent(details)}`;
+        
+        window.location.href = mailtoLink;
+    }
+</script>
+
     <!-- footer section -->
     <footer id="footer" class="mt-4">
         <div class="container-fluid">
