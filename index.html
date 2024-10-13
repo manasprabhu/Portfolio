@@ -9,8 +9,8 @@
   <!-- bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+  <!-- font awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     /* Add smooth scrolling */
     html {
@@ -129,7 +129,7 @@
                         <div class="card-body">
                             <i class="fas servicesIcon fa-shield-alt"></i>
                             <h4 class="card-title mt-3">Resume</h4>
-                            <a href="resume_manas.pdf" class="resume">
+                            <a href="resume_manas(4).pdf" class="resume">
                                 <button type="button" class="btn btn-success mt-3" style="background-color: #0d6efd;">Download Resume</button>
                             </a>
                         </div>
@@ -173,28 +173,27 @@
         const subject = document.getElementById('subject').value;
         const details = document.getElementById('details').value;
 
-        const mailtoLink = `mailto:manasprabhu52@gmail.com?subject=${encodeURIComponent(subject)}&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ADetails: ${encodeURIComponent(details)}`;
-        
-        window.location.href = mailtoLink;
+        window.open(`mailto:manasprabhu23@gmail.com?subject=${subject}&body=Hello, I am ${name}.%0D%0A%0D%0A${details}%0D%0A%0D%0AContact me back at ${email}.`);
     }
 </script>
 
-    <!-- footer section -->
-    <footer id="footer" class="mt-4">
-        <div class="container-fluid">
-            <!-- social media icons -->
-            <div class="social-icons mt-4 text-center">
-                <a href="https://github.com/manasprabhu" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/manas-prabhu-2836ba209/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.facebook.com/manas.prabhu.90?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com/_manasprabhu_?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
+<!-- footer section -->
+<footer id="footer" class="mt-4">
+    <div class="container-fluid">
+        <!-- social media icons -->
+        <div class="social-icons mt-4 text-center">
+            <a href="https://github.com/manasprabhu" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/manas-prabhu-2836ba209/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/manas.prabhu.90?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/_manasprabhu_?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-        <div class="text-center mt-4">
-            <p>&copy; 2024 Manas Prabhu. All rights reserved.</p>
-        </div>
-    </footer>
-    <!-- load javascript after loading all html content -->
-    <script src="script/script.js"></script>
+    </div>
+    <div class="text-center mt-4">
+        <p>&copy; 2024 Manas Prabhu. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- load javascript after loading all html content -->
+<script src="script/script.js"></script>
 </body>
 </html>
