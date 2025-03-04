@@ -26,147 +26,425 @@
 </head>
 
 <body class="bg">
-    <nav class="navbar bg-dark navbar-expand-lg fixed-top navbarScroll">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
         <div class="container">
             <a class="navbar-brand" href="#">Manas Prabhu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fas fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#home">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">🏠 Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#about">👨‍💻 About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#projects">🚀 Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact">📩 Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- main banner -->
-    <section class="bgimage" id="home">
-        <video autoplay loop muted playsinline class="back-video">
-            <source src="images/1851190-uhd_3840_2160_25fps.mp4" type="video/mp4">
-        </video>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
-                    <h2 class="hero_title">Hi, it's me Manas Prabhu</h2>
-                </div>
-            </div>
-        </div>
-    </section>
+    
+    <!-- CSS for enhanced styling -->
+    <style>
+        .navbar-custom {
+            background: linear-gradient(90deg, #000428, #004e92);
+            padding: 15px 0;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        .navbar-custom .navbar-brand {
+            color: #ffc107;
+            font-weight: bold;
+            font-size: 1.8rem;
+            transition: color 0.3s ease-in-out;
+        }
+    
+        .navbar-custom .navbar-brand:hover {
+            color: #fff;
+        }
+    
+        .navbar-custom .nav-item {
+            margin: 0 10px;
+        }
+    
+        .navbar-custom .nav-link {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+    
+        .navbar-custom .nav-link:hover {
+            color: #ffc107;
+            transform: scale(1.1);
+        }
+    
+        .navbar-custom .nav-link::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ffc107;
+            transition: width 0.3s;
+        }
+    
+        .navbar-custom .nav-link:hover::after {
+            width: 100%;
+        }
+    
+        /* Custom mobile toggle button */
+        .custom-toggler {
+            border: none;
+            outline: none;
+        }
+    
+        .custom-toggler .fas {
+            color: #ffc107;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+    
+        .custom-toggler:hover .fas {
+            transform: rotate(90deg);
+        }
+    </style>    
+
+   <!-- Hero Section -->
+<section class
+="bgimage" id="home">
+    <div class="overlay"></div> <!-- Semi-transparent overlay -->
+    <video autoplay loop muted playsinline class="back-video">
+        <source src="images/1851190-uhd_3840_2160_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="container-fluid text-center hero-content">
+        <h2 class="hero_title">Hi, I'm <span class="highlight">Manas Prabhu</span></h2>
+        <p class="hero_subtitle">A Passionate Developer & Tech Enthusiast</p>
+        <a href="#projects" class="btn btn-primary hero-btn">View My Work</a>
+    </div>
+</section>
+
+<!-- CSS for styling -->
+<style>
+    .bgimage {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+        position: absolute;
+        z-index: 2;
+        padding: 20px;
+    }
+
+    .hero_title {
+        font-size: 3rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        animation: fadeInDown 1.5s ease-in-out;
+    }
+
+    .highlight {
+        color: #ffc107;
+    }
+
+    .hero_subtitle {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .hero-btn {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 25px;
+        animation: zoomIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes zoomIn {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+</style>
     <!-- about section -->
     <section id="about">
-        <div class="container mt-4 pt-4">
-            <h1 class="text-center">About Me</h1>
-            <div class="row mt-4">
-                <div class="col-lg-4">
-                    <img src="images/profile.jpg" class="imageAboutPage" alt="Profile Image">
+        <div class="container mt-5 pt-5">
+            <h1 class="text-center fw-bold">About Me</h1>
+            <div class="row mt-5 align-items-center">
+                
+                <!-- Profile Image Section -->
+                <div class="col-lg-4 text-center">
+                    <img src="images/profile.jpg" class="imageAboutPage rounded-circle shadow-lg" alt="Profile Image">
                 </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li>Name: <b>Manas Prabhu</b></li>
-                        <li>Age: <b>21</b></li>
-                        <li>Occupation: <b>Web Developer</b></li>
+    
+                <!-- About Content -->
+                <div class="col-md-8">
+                    <ul class="list-unstyled fs-5">
+                        <li><strong>Name:</strong> <span class="text-primary">Manas Prabhu</span></li>
+                        <li><strong>Age:</strong> <span class="text-primary">21</span></li>
+                        <li>
+                            <strong>Skills:</strong>  
+                            <span class="text-primary fw-semibold">
+                                Python (Django), JavaScript (React.js, Next.js), MySQL, AWS, Git,  
+                                Generative AI (Prompt Engineering), NLP, Sentiment Analysis,  
+                                Web Development (HTML, CSS, JS), and DSA. 🚀
+                            </span>
+                        </li>
                     </ul>
-                    <p class="text-justify">Hello, I'm Manas Prabhu, a driven and ambitious B.Tech student at KIIT University. Passionate about technology and eager to make a positive impact, I am constantly exploring and learning in the world of engineering. Throughout my academic journey, I have embraced challenges, sought practical experiences, and nurtured my problem-solving skills. With a keen eye on the future, I am dedicated to honing my expertise and contributing meaningfully to the ever-evolving tech landscape. I believe that every obstacle is an opportunity, and I'm excited to harness my creativity and determination to make a difference in the world of technology.</p>
+    
+                    <p class="text-justify fs-5 mt-3">
+                        <strong>Hello! I'm Manas Prabhu,</strong> a passionate and ambitious 
+                        <span class="text-primary fw-bold">B.Tech student at KIIT University.</span>  
+                        I thrive on solving challenges and embracing new technologies. My journey in 
+                        <span class="text-primary fw-bold">AI, Backend Development, and Cloud Computing</span>  
+                        has been fueled by curiosity and hands-on learning.  
+                        I believe in innovation, creativity, and making an impact in the ever-evolving 
+                        tech industry. Every obstacle is an opportunity, and I am excited to build  
+                        solutions that shape the future! 💡
+                    </p>
                 </div>
+    
             </div>
         </div>
-    </section>
-    <!-- projects section -->
-    <section id="projects">
-        <div class="container">
-            <h1 class="text-center">Projects</h1>
-            <div class="row">
-                <div class="col-lg-4 mt-4">
-                    <div class="card projectsText">
+    </section>    
+    <!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <h1 class="text-center fw-bold">Projects</h1>
+        <div class="row">
+            
+            <!-- Gym Management System -->
+            <div class="col-lg-4 mt-4">
+                <a href="https://gym-management-manas.netlify.app/" target="_blank" class="text-decoration-none">
+                    <div class="card projectsText text-center shadow-lg">
                         <div class="card-body">
-                            <i class="fas servicesIcon fa-clock"></i>
+                            <i class="fas servicesIcon fa-dumbbell fa-3x text-success"></i>
+                            <h4 class="card-title mt-3">Gym Management System</h4>
+                            <p class="card-text mt-3">A web-based platform for gym members to track workout routines, diet plans, and progress, built with Django and React.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- News Sentiment Analysis -->
+            <div class="col-lg-4 mt-4">
+                <a href="https://github.com/manasprabhu/HeadlineSentimentAnalysis.git" target="_blank" class="text-decoration-none">
+                    <div class="card projectsText text-center shadow-lg">
+                        <div class="card-body">
+                            <i class="fas servicesIcon fa-chart-line fa-3x text-primary"></i>
+                            <h4 class="card-title mt-3">News Sentiment Analysis</h4>
+                            <p class="card-text mt-3">Developed a sentiment analysis model using NLP to analyze and classify news headlines as positive, negative, or neutral.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Portfolio Website -->
+            <div class="col-lg-4 mt-4">
+                <a href="https://manasprabhu.netlify.app/" target="_blank" class="text-decoration-none">
+                    <div class="card projectsText text-center shadow-lg">
+                        <div class="card-body">
+                            <i class="fas servicesIcon fa-globe fa-3x text-primary"></i>
                             <h4 class="card-title mt-3">Portfolio Website</h4>
                             <p class="card-text mt-3">My portfolio website highlights my skills in web development, showcasing projects in HTML, CSS, JavaScript, and React.</p>
                         </div>
-                    </div>  
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="card projectsText">
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+            <!-- Car-Bike Rentals Application -->
+            <div class="col-lg-4 mt-4">
+                <a href="https://github.com/manasprabhu/Car-Bike-Rentals-Application.git" target="_blank" class="text-decoration-none">
+                    <div class="card projectsText text-center shadow-lg">
                         <div class="card-body">
-                            <i class="fas servicesIcon fa-layer-group"></i>
-                            <h4 class="card-title mt-3">Amazon Clone</h4>
-                            <p class="card-text mt-3">A full-stack e-commerce website built using React, JavaScript, and Firebase with real-time product listing, shopping cart functionality, and authentication.</p>
-                        </div>
-                    </div>  
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="card projectsText">
-                        <div class="card-body">
-                            <i class="far servicesIcon fa-check-circle"></i>
+                            <i class="fas servicesIcon fa-car fa-3x text-danger"></i>
                             <h4 class="card-title mt-3">Car-Bike Rentals Application</h4>
                             <p class="card-text mt-3">A rental service platform developed using React and Node.js, offering vehicle rental bookings with user authentication, dynamic pricing, and search filters.</p>
                         </div>
-                    </div>  
-                </div>
+                    </div>
+                </a>
             </div>
-            <div class="row">
-                <div class="col-lg-4 mt-4">
-                    <div class="card projectsText">
+
+            <!-- Resume Download (Centered) -->
+            <div class="col-lg-4 mt-4">
+                <a href="resume_manas(4).pdf" target="_blank" class="text-decoration-none">
+                    <div class="card projectsText text-center shadow-lg">
                         <div class="card-body">
-                            <i class="fas servicesIcon fa-search"></i>
+                            <i class="fas servicesIcon fa-file-pdf fa-3x text-danger"></i>
+                            <h4 class="card-title mt-3">Resume</h4>
+                            <button type="button" class="btn btn-primary mt-3">Download Resume</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Expense Tracker -->
+            <div class="col-lg-4 mt-4">
+                <a href="https://github.com/manasprabhu/Expense-Tracker.git" target="_blank" class="text-decoration-none">
+                    <div class="card projectsText text-center shadow-lg">
+                        <div class="card-body">
+                            <i class="fas servicesIcon fa-wallet fa-3x text-warning"></i>
+                            <h4 class="card-title mt-3">Expense Tracker</h4>
+                            <p class="card-text mt-3">A web application that helps users track daily expenses, categorize spending, and generate reports, built using React and Firebase.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+            <!-- To-Do List App -->
+            <div class="col-lg-4 mt-4">
+                <a href="https://github.com/manasprabhu/To-Do-List.git" target="_blank" class="text-decoration-none">
+                    <div class="card projectsText text-center shadow-lg">
+                        <div class="card-body">
+                            <i class="fas servicesIcon fa-tasks fa-3x text-warning"></i>
                             <h4 class="card-title mt-3">To-Do List App</h4>
                             <p class="card-text mt-3">A task management app created using React, enabling users to add, edit, and track their daily tasks, with data persistence using local storage.</p>
                         </div>
-                    </div>  
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="card projectsText">
+                    </div>
+                </a>
+            </div>
+
+            <!-- IoT-Based Pisciculture Automation -->
+            <div class="col-lg-4 mt-4">
+                <a href="https://ieeexplore.ieee.org/abstract/document/9908693" target="_blank" class="text-decoration-none">
+                    <div class="card projectsText text-center shadow-lg">
                         <div class="card-body">
-                            <i class="fas servicesIcon fa-shield-alt"></i>
-                            <h4 class="card-title mt-3">Resume</h4>
-                            <a href="resume_manas(4).pdf" class="resume">
-                                <button type="button" class="btn btn-success mt-3" style="background-color: #0d6efd;">Download Resume</button>
-                            </a>
-                        </div>
-                    </div>  
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="card projectsText">
-                        <div class="card-body">
-                            <i class="fas servicesIcon fa-wrench"></i>
+                            <i class="fas servicesIcon fa-microchip fa-3x text-info"></i>
                             <h4 class="card-title mt-3">IoT-Based Pisciculture Automation</h4>
                             <p class="card-text mt-3">Developed a real-time monitoring system using IoT to automate fish farming operations, published as a research paper in IEEE.</p>
                         </div>
-                    </div>  
+                    </div>
+                </a>
+            </div>
+
+            <!-- Amazon Clone -->
+            <div class="col-lg-4 mt-4">
+                <a href="https://github.com/manasprabhu/E-commerce-Store.git" target="_blank" class="text-decoration-none">
+                    <div class="card projectsText text-center shadow-lg">
+                        <div class="card-body">
+                            <i class="fas servicesIcon fa-shopping-cart fa-3x text-success"></i>
+                            <h4 class="card-title mt-3">E-commerce Store</h4>
+                            <p class="card-text mt-3">A full-stack e-commerce website built using React, JavaScript, and Firebase with real-time product listing, shopping cart functionality, and authentication.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <h1 class="text-center fw-bold mb-4">Contact Me</h1>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-4">
+                        <h3 class="text-center mb-4">Get in Touch</h3>
+                        
+                        <!-- Contact Form -->
+                        <form onsubmit="sendEmail(); return false;">
+                            
+                            <!-- Name Field -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                            </div>
+
+                            <!-- Email Field -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+
+                            <!-- Subject Field -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-heading"></i></span>
+                                <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                            </div>
+
+                            <!-- Message Field -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-comment-dots"></i></span>
+                                <textarea id="details" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-<!-- contact section -->
-<section id="contact">
-    <div class="container mt-3 contactContent">
-        <h1 class="text-center">Contact Me</h1>
-        <div class="col-lg-6 mx-auto">
-            <!-- form fields -->
-            <form onsubmit="sendEmail(); return false;">
-                <input type="text" id="name" class="form-control form-control-lg" placeholder="Name" required>
-                <input type="email" id="email" class="form-control mt-3" placeholder="Email" required>
-                <input type="text" id="subject" class="form-control mt-3" placeholder="Subject" required>
-                <div class="mb-3 mt-3">
-                    <textarea class="form-control" rows="5" id="details" placeholder="Project Details" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-success mt-3" style="background-color: #0d6efd;">Contact Me</button>
-            </form>
         </div>
     </div>
 </section>
 
+<!-- JavaScript -->
 <script>
     function sendEmail() {
         const name = document.getElementById('name').value;
@@ -175,27 +453,67 @@
         const details = document.getElementById('details').value;
 
         window.open(`mailto:manasprabhu52@gmail.com?subject=${encodeURIComponent(subject)}&body=Hi, My name is ${encodeURIComponent(name)}. ${encodeURIComponent(details)}. You can reach me at ${encodeURIComponent(email)}.`);
-        
-        }
+    }
 </script>
 
-<!-- footer section -->
-<footer id="footer" class="mt-4">
-    <div class="container-fluid">
-        <!-- social media icons -->
-        <div class="social-icons mt-4 text-center">
-            <a href="https://github.com/manasprabhu" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/manas-prabhu-2836ba209/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/manas.prabhu.90?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com/_manasprabhu_?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+<!-- Footer Section -->
+<footer id="footer" class="footer-custom py-4">
+    <div class="container text-center">
+        
+        <!-- Social Media Icons -->
+        <div class="social-icons mb-3">
+            <a href="https://github.com/manasprabhu" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/manas-prabhu-2836ba209/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/manas.prabhu.90?mibextid=ZbWKwL" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/_manasprabhu_?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
         </div>
-    </div>
-    <div class="text-center mt-4">
-        <p>&copy; 2024 Manas Prabhu. All rights reserved.</p>
+
+        <!-- Copyright -->
+        <p class="footer-text">&copy; 2024 <strong>Manas Prabhu</strong>. All Rights Reserved.</p>
     </div>
 </footer>
 
-<!-- load javascript after loading all html content -->
+<!-- Custom Styles for Footer -->
+<style>
+    .footer-custom {
+        background: linear-gradient(90deg, #000428, #004e92);
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .social-link {
+        font-size: 28px;
+        color: white;
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .social-link:hover {
+        transform: scale(1.2);
+        color: #ffc107;
+    }
+
+    .footer-text {
+        font-size: 1rem;
+        margin-top: 10px;
+        opacity: 0.8;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .footer-text:hover {
+        opacity: 1;
+    }
+</style>
+
+<!-- Load JavaScript After Loading All HTML Content -->
 <script src="script/script.js"></script>
 </body>
 </html>
